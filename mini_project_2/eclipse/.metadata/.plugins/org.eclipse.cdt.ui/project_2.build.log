@@ -1,0 +1,36 @@
+23:00:58 **** Incremental Build of configuration Debug for project project_2 ****
+make all 
+Building file: ../ex.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"ex.d" -MT"ex.o" -c -o "ex.o" "../ex.c"
+In file included from ../ex.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../ex.c
+ 
+Building target: project_2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,project_2.map -mmcu=atmega32 -o "project_2.elf"  ./ex.o ./trial.o   
+Finished building target: project_2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S project_2.elf  >"project_2.lss"
+Finished building: project_2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 project_2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:00:59 Build Finished. 0 errors, 1 warnings. (took 897ms)
+
